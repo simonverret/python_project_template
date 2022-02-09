@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from projectNameGoesHere import utils
+from foo import utils
 
 default_argv = {
     'resolution': 500,
@@ -38,5 +38,5 @@ def main(resolution=100, frames=30, pause=0.1):
 
 
 if __name__ == "__main__":
-    argv = utils.argparse_wrapper(default_argv, sys.argv)
-    main(**default_argv)
+    argv = utils.argparse_wrapper(default_argv)
+    main(**argv)

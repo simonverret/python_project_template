@@ -1,11 +1,11 @@
 from distutils.core import setup
-setup(name='projectNameGoesHere',
+setup(name='foo',
     version='1.0',
     description='',
     author='Simon Verret',
     author_email='verret.simon@gmail.com',
-    url='https://github.com/simonverret/projectNameGoesHere',
-    packages=['projectNameGoesHere'],
+    url='https://github.com/simonverret/foo',
+    packages=['foo'],
     install_requires=[
         'numpy',
         'matplotlib',

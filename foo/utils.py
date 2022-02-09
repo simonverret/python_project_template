@@ -23,8 +23,8 @@ logfile.setFormatter(logging.Formatter('%(asctime)s %(name)-s %(levelname)-8s %(
 logging.getLogger().addHandler(logfile)
 
 
-def argparse_wrapper(default_args, help_dict=None, description=None, usage=None, argv=None, out_dict=True):
-    """Parses script arguments following the provided dictionnary template
+def argparse_wrapper(default_args, help_dict=None, description=None, usage=None, argv=sys.argv, out_dict=True):
+    """Parses script arguments to customize values of `default_args` dictionnary
 
     Wraps `argparse` to return an update version of the provided `default_args` 
     with the values passed to the script from the command prompt. For example,

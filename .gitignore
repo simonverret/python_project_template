@@ -1,5 +1,6 @@
 __pycache__/
 *.egg-info/
+*/__ini__.pyc
 htmlcov/
 .coverage
 docs/build/
