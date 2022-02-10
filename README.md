@@ -1,8 +1,8 @@
-# Foo
+# Foo (template project)
 
 ## License
 
-This example project is in the public domain (see the `LICENSE` file). If you edit this project, you should change the license if you don't want your code to end up in the public domain.
+This template project is in the public domain (see the `LICENSE` file). If you edit this project, you should change the license if you don't want your code to end up in the public domain.
 
 
 ## Install 
@@ -36,56 +36,14 @@ Navigate coverage details
 
 
 ## Documentation
-Build and navigate the documentation
+Build and navigate the Sphinx documentation
 
+    pip install sphinx
     cd docs
     make html
     open build/html/index.html
 
-### From scratch
-At first, there is nothing in a `docs/` directory. Here are the steps used to initialize the documentation
+Docstrings are added to the documentation automatically using the `napoleon` extension to Sphinx (to support Google and Numpy style docstrings). After modifying the code, you must regenerate those:
 
-    pip install sphinx sphinx-rtd-theme
-    sphinx-quickstart 
-    
-In the prompt choose separate source and build directories, and follow instruction.
-To obtain the "read the docs" theme, modify `docs/source/conf.py` as
-
-    import sphinx_rtd_theme
-
-    extensions = [
-        ...
-        'sphinx_rtd_theme',
-    ]
-
-    html_theme = "sphinx_rtd_theme"
-
-To enable automatic documentation from docstrings, modify `docs/source/conf.py` as:
-
-    extensions = [
-        'sphinx.ext.autodoc',
-    ]
-
-Then, add the desired module to the docs. You can make a new page by modifying `docs/source/index.rst` as:
-
-    .. toctree::
-       :maxdepth: 2
-
-       newpage
-
-which requries to add `docs/source/newpage.rst` file containing, for example:
-
-    utils
-    ===============================
-
-    .. toctree::
-       :maxdepth: 2
-
-    .. automodule:: foo.utils
-       :members:
-
-
-For more information, see
-[read the docs](https://readthedocs.org), 
-[sphinx](https://www.sphinx-doc.org/en/master/usage/configuration.html), andthe 
-[read-the-docs sphinx theme](https://sphinx-rtd-theme.readthedocs.io/en/latest/installing.html).
+    cd docs
+    sphinx-apidoc -f -o source ..;

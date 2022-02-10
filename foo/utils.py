@@ -23,34 +23,36 @@ logfile.setFormatter(logging.Formatter('%(asctime)s %(name)-s %(levelname)-8s %(
 logging.getLogger().addHandler(logfile)
 
 
-def argparse_wrapper(default_args, help_dict=None, description=None, usage=None, argv=sys.argv, out_dict=True):
-    """Parses script arguments to customize values of `default_args` dictionnary
+def argparse_wrapper(default_args, help_dict=None, description=None, usage=None, argv=None, out_dict=True):
+    
+    
+    """Parses script arguments following the provided dictionnary template
 
-    Wraps `argparse` to return an update version of the provided `default_args` 
+    Args:
+        default_args (dict): dictionnary of the default parameters
+        help_dict (dict, optional): helpstrings for --help. Defaults to None.
+        description (str, optional): short --help description. Defaults to None.
+        usage (str, optional): long --help description. Defaults to None.
+        argv (list, optional): manual scripts arguments. Defaults to sys.argv.
+        out_dict (bool, optional): output dict or Namespace. Defaults to True.
+
+    Returns:
+        dict: dictionnary of the parameters read from the command prompt
+
+    Wraps ``argparse`` to return an update version of the provided ``default_args`` 
     with the values passed to the script from the command prompt. For example,
-    using this function in the file `foo.py` with `default_args={'foo':0, 'bar':
-    [1,2,3], 'boo': True, 'far': None} would immediately allow to prompt
+    using this function in the file ``foo.py`` with ``default_args={'foo':0, 'bar':
+    [1,2,3], 'boo': True, 'far': None}`` would immediately allow to prompt::
 
         python foo.py --foo 23 --bar 4 5 6 7 --far my_str --no_boo 
 
     The function also support passing a file to the script to read args from a 
-    `.json` file, for example
-
+    ``.json`` file, for example::
+        
         python foo.py params.json --bar 7 8 9
 
     The parameters priority is script args first, json file second, and default 
     dict otherwise.
-
-    Args:
-    - default_args (dict): dictionnary of the default parameters
-    - help_dict (dict, optional): helpstrings for --help. Defaults to None.
-    - description (str, optional): short --help description. Defaults to None.
-    - usage (str, optional): long --help description. Defaults to None.
-    - argv (list, optional): manual scripts arguments. Defaults to sys.argv.
-    - out_dict (bool, optional): output dict or Namespace. Defaults to True.
-
-    Returns:
-    - dict: dictionnary of the parameters read from the command prompt
     """
     if argv is None: 
         argv=sys.argv

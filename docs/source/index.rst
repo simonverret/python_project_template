@@ -6,12 +6,12 @@
 Foo documentation
 ===============================
 
-Welcome to foo's documentation. This is an example package that 
-
 .. toctree::
    :maxdepth: 2
 
-   utils
+   foo
+   modules
+   setup
 
 
 Navigation
