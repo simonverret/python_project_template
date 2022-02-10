@@ -1,12 +1,6 @@
 # Foo (template project)
 
-## License
-
-This template project is in the public domain (see the `LICENSE` file). If you edit this project, you should change the license if you don't want your code to end up in the public domain.
-
-
 ## Install 
-
 Create a virtual environment (optional)
 
     pip install virtualenv
@@ -16,7 +10,6 @@ Create a virtual environment (optional)
 Install foo and its requirements (developper install)
 
     pip install -e .
-
 
 ## Tests
 Install dependencies and run the tests
@@ -34,7 +27,6 @@ Navigate coverage details
     coverage html
     open htmlcov/index.html
 
-
 ## Documentation
 Build and navigate the Sphinx documentation
 
@@ -47,3 +39,7 @@ Docstrings are added to the documentation automatically using the `napoleon` ext
 
     cd docs
     sphinx-apidoc -f -o source ..;
+
+## License
+This template project is in the public domain (see the `LICENSE` file). If you edit this project, you should change the license if you don't want your code to end up in the public domain.
+
