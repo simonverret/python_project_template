@@ -1,6 +1,6 @@
 # How to initialize the documentation
 
-When initializing the documentation, there should be nothing in the `docs/` directory appart for the current `README` file. Then, install sphinx and run the quickstart utility,
+When initializing the documentation, there should be nothing in the `docs/` directory appart for the current `README` file. Install sphinx and run the quickstart utility,
 
     pip install sphinx
     cd docs

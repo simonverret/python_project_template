@@ -12,6 +12,7 @@ default_argv = {
 
 
 class Plotter:
+        
     def __init__(self):
         self.fig, self.ax = plt.subplots(2, 1, figsize=(6,4))
         self.lines = [None, None]
@@ -23,6 +24,21 @@ class Plotter:
 
 
     def update(self, x, y, subplot=0, pause=0.1):
+        """Updates the data of the live plot
+
+        This updates the data content of the pyplot object with minimal delay
+
+        Parameters
+        ----------
+        x : list or numpy array
+            Abcissa data
+        y : list or numpy array
+            Ordinate data
+        subplot : int, optional
+            subplot of the data to update, by default 0
+        pause : float, optional
+            duration of frame, by default 0.1
+        """                
         self.lines[subplot].set_data(x, y)
         plt.pause(pause)
 
