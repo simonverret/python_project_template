@@ -30,12 +30,12 @@ Navigate coverage details
 ## Documentation
 Build and navigate the Sphinx documentation
 
-    pip install sphinx
+    pip install sphinx furo
     cd docs
     make html
     open build/html/index.html
 
-Docstrings are added to the documentation automatically using the `napoleon` extension to Sphinx (to support Google and Numpy style docstrings). After modifying the code, you must regenerate those:
+Docstrings are added to the documentation automatically using the `napoleon` extension to Sphinx (to support Google and Numpy style docstrings). After modifying the code, you can regenerate the automatic pages. This will overwrite any edit to the documentation.
 
     cd docs
     sphinx-apidoc -f -o source ..;
