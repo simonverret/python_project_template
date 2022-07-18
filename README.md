@@ -39,7 +39,3 @@ Docstrings are added to the documentation automatically using the `napoleon` ext
 
     cd docs
     sphinx-apidoc -f -o source ..;
-
-## License
-This template project is in the public domain (see the `LICENSE` file). If you edit this project, you should change the license if you don't want your code to end up in the public domain.
-
